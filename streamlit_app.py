@@ -12,7 +12,7 @@ if st.button('Corregir texto'):
     response = openai.Completion.create(
         engine='text-davinci-003',
         prompt=f'Corrige los errores gramaticales y de puntuación en este texto: {texto}',
-        max_tokens=1024,
+        max_tokens=2000,
         n=1,
         stop=None,
         temperature=0.5,
@@ -20,4 +20,4 @@ if st.button('Corregir texto'):
 
     correccion = response.choices[0].text.strip()
     
-    st.text_area('Texto corregido', value=correccion, height=200)
+    st.text_area('Texto corregido', value=correccion, height=400)
